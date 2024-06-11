@@ -56,31 +56,3 @@ def run_home():
         with col4:
             st.metric(label='자전거 이용자 수', value=prettify(bicycle_users))
 
-    st.markdown("<hr>", unsafe_allow_html=True)
-    st.subheader(f'{park_name} 공원의 2025년 이용자 수 예측')
-
-    # 예측 모델 준비
-    prophet_data = data[(data['공원명'] == park_name) & (data['공원 구명'] == district_name)]
-    prophet_data = prophet_data.groupby('현황 일시').sum().reset_index()
-
-    prophet_df = prophet_data[['현황 일시', '일반이용자(아침)']]
-    prophet_df.columns = ['ds', 'y']
-
-    model = Prophet()
-    model.fit(prophet_df)
-
-    future = model.make_future_dataframe(periods=365)
-    forecast = model.predict(future)
-
-    forecast_2025 = forecast[(forecast['ds'].dt.year == 2025)]
-    
-    st.write(forecast_2025[['ds', 'yhat']])
-
-    # 예측 결과 시각화
-    plt.figure(figsize=(10, 6))
-    sns.lineplot(x=forecast_2025['ds'], y=forecast_2025['yhat'], marker='o')
-    plt.xlabel('Date')
-    plt.ylabel('Predicted Users')
-    plt.title(f'{park_name} 공원의 2025년 이용자 수 예측')
-    plt.xticks(rotation=45)
-    st.pyplot(plt)
