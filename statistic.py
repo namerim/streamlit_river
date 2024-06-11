@@ -35,7 +35,7 @@ def forecast_usage(data, parking_lot):
 
 def run_forecast_app(total_df3):
     st.markdown("## 한강공원 주차장 월별 이용객 예측")
-    data = load_data('C:\\task\\한강지천길.csv')
+    data = load_data('한강지천길.csv')
     parking_lot = st.sidebar.selectbox('주차장명', data['주차장명'].unique())
     plot_data(data, parking_lot)
     forecast_usage(data, parking_lot)
