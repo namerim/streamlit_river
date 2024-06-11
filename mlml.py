@@ -56,7 +56,7 @@ def parking_create_chart(total_df):
         st.plotly_chart(fig)
 
     # 데이터 로드
-parking_file_path = 'C:\\task\\한강공원 주차장 월별 이용 현황.csv'
+parking_file_path = '한강공원 주차장 월별 이용 현황.csv'
 parking_data = pd.read_csv(parking_file_path, encoding='cp949')
 
 # 날짜를 datetime 형식으로 변환
@@ -88,7 +88,7 @@ def parking_usage_and_fee(total_df):
         st.table(selected_data[['주중 이용시간 시작', '주중 이용시간 종료', '주말 이용시간 시작', '주말 이용시간 종료', '기본요금', '정기금금액']].reset_index(drop=True))
 
 # 데이터 로드
-parking_file_path = 'C:\\task\\한강공원주차장정보.csv'
+parking_file_path = '한강공원주차장정보.csv'
 parking_data = pd.read_csv(parking_file_path, encoding='cp949')
 
 # Streamlit 앱 실행
