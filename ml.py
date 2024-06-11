@@ -22,7 +22,7 @@ def load_data(file_path):
     return pd.read_csv(file_path, encoding='cp949')
 
 def road(total_df):
-    data = load_data('C:\\task\\한강지천길정리.csv')
+    data = load_data('한강지천길정리.csv')
 
     st.markdown("한강공원의 이용객, 주차장 마지막으로 둘레길을 소개해드리겠습니다.")
 
@@ -88,7 +88,7 @@ def run_ml_home(total_df) :
     if selected == '한강 지천길' :
         home(total_df)
     elif selected == '지천길 정보' :
-        total_df3 = load_data('C:\\task\\한강지천길정리.csv')
+        total_df3 = load_data('한강지천길정리.csv')
         road(total_df3)
     else:
         st.warning('Wrong')
