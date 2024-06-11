@@ -8,7 +8,7 @@ from ml import run_ml_home
 def main() :
 
     with st.sidebar:
-        st.image('C:\\task\\images.jpeg')
+        st.image('images.jpeg')
         selected = option_menu('한강 이용방안', ['한강공원', '한강 주차장', '한강 지천길'],
                                icons=['house', 'file-bar-graph', 'map'], menu_icon='water', default_index=0)
     
