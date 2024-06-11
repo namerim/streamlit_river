@@ -55,7 +55,7 @@ def parking_usage_chart(total_df):
         st.plotly_chart(fig)
 
 # 데이터 로드
-parking_file_path = 'C:\\task\\한강공원 주차장 월별 이용 현황.csv'
+parking_file_path = '한강공원 주차장 월별 이용 현황.csv'
 parking_data = pd.read_csv(parking_file_path, encoding='cp949')
 
 # Streamlit 앱 실행
