@@ -39,7 +39,7 @@ def display_parking_map(total_df):
 
 def main():
     # 데이터 로드
-    total_df = pd.read_csv('C:\\task\\한강공원주차장정보.csv')  # 데이터 파일 경로를 적절히 지정해주세요.
+    total_df = pd.read_csv('한강공원주차장정보.csv')  # 데이터 파일 경로를 적절히 지정해주세요.
 
     # 지도에 주차장 위치 표시
     display_parking_map(total_df)
