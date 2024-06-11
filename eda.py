@@ -55,10 +55,10 @@ def run_eda_home(total_df) :
     elif selected == '예측현황' :
         parking_create_chart(total_df)
     elif selected == '위치' :
-        total_df2 = load_data('C:\\task\\한강공원주차장정보.csv')
+        total_df2 = load_data('한강공원주차장정보.csv')
         display_parking_map(total_df2)
     elif selected == '요금' :
-        total_df2 = load_data('C:\\task\\한강공원주차장정보.csv')
+        total_df2 = load_data('한강공원주차장정보.csv')
         parking_usage_and_fee(total_df2)
     else:
         st.warning('Wrong')
