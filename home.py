@@ -84,5 +84,3 @@ def run_home():
     plt.title(f'{park_name} 공원의 2025년 이용자 수 예측')
     plt.xticks(rotation=45)
     st.pyplot(plt)
-
-run_home()
